@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +29,7 @@
                 <h1 class="display-4 text-center mb-3">Weight-Converter</h1>
                 <form>
                     <div class="form-group">
-                        <input id="lbsInput" type="number" class="form-control form-control-lg bg-warning" placeholder="Enter in Pounds..">
+                        <input id="kiloInput" type="number" class="form-control form-control-lg bg-warning" placeholder="Enter in kilograms..">
                     </div>
                 </form>
                     <div id="output">
@@ -46,8 +43,8 @@
 
                         <div class="card mb-2 bg-success">
                             <div class="card-block ">
-                                <h4>Kilograms:</h4>
-                                <div id="kgOutput">
+                                <h4>pounds:</h4>
+                                <div id="poundsOutput">
                                 </div>
                             </div>
                         </div>
@@ -65,12 +62,12 @@
     </div> 
         <script>
             document.getElementById('output').style.visibility='hidden';
-            document.getElementById('lbsInput').addEventListener('input',function(e){
+            document.getElementById('kiloInput').addEventListener('input',function(e){
                 document.getElementById('output').style.visibility='visible';
-               let lbs = e.target.value;
-               document.getElementById('gramsOutput').innerHTML = lbs/0.0022046;
-               document.getElementById('kgOutput').innerHTML = lbs/2.2046;
-               document.getElementById('ozOutput').innerHTML = lbs*16;
+               let kilo = e.target.value;
+               document.getElementById('gramsOutput').innerHTML = kilo*1000;
+               document.getElementById('poundsOutput').innerHTML = kilo*2.2046226218;
+               document.getElementById('ozOutput').innerHTML = kilo*35.27396195;
             });
         </script>
     </body>
